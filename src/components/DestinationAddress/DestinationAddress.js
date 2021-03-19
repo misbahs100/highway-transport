@@ -25,7 +25,7 @@ const DestinationAddress = () => {
    console.log(result);
 
     return (
-        <div className="container">
+        <div className="loginbox-container">
             <Header></Header>
             <div className="row container mt-5">
                 {isSearched
@@ -48,8 +48,9 @@ const DestinationAddress = () => {
                   </div>
               </div>)
                 : ( <div className="col-md-4 container addressbox">
-                <h1>Address</h1>
+                <h3 className="text-center">Giv.....</h3>
                 <form className="address-form" onSubmit={handleSubmit(onSubmit)}>
+                    
                     <input name="name" defaultValue={loggedInUser.displayName} ref={register({ required: true })} placeholder="Your name"/>
                     {errors.name && <span className="error">Name is required</span>}
 

@@ -11,7 +11,7 @@ const Home = () => {
         <div className="home">
             <Header></Header>
            <div className="container" style={{marginTop: '25%'}}>
-            <div className="row justify-content-center">
+            <div className="row justify-content-center card-container">
                    {
                        transports.map( transport => <Transport transport={transport}></Transport>)
                    }

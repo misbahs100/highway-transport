@@ -5,6 +5,7 @@ import './Login.css';
 import {UserContext} from '../../App';
 import googlePic from '../../images/google-2.png';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import Header from '../Header/Header';
 
 const Login = () => {
     const [newUser, setNewUser] = useState(false)
@@ -73,7 +74,8 @@ const Login = () => {
 
 
     return (
-        <div>
+        <div className="loginbox-container">
+            <Header></Header>
             <div className="loginbox">
                 {newUser
                  ? <h1>Create a new account</h1>
@@ -95,7 +97,7 @@ const Login = () => {
                      : <a href="#" onClick={() => setNewUser(!newUser)}>Don't have an account? Create one.</a>
                     }
                     <br />
-                    <p>or Login with</p>
+                    <p>--- or ---</p>
                     <br />
                 </form>
                 <div>

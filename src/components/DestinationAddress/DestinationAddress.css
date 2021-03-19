@@ -1,12 +1,48 @@
-.address-form input{
+.address-form input[name="email"], input[name="name"], input[name="source"], input[name="destination"]{
     display: block;
     margin-top: 30px;
     padding: 5px;
     border: 1px solid gray;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     width: 300px;
     margin-left: auto;
     margin-right: auto;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.address-form input[type="submit"]
+  {
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 300px;
+    padding: 5px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 30px;
+  }
+  .address-form input[type="submit"]:hover
+  {
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+  }
+.addressbox{
+    width: 320px;
+    height: 410px;
+    background: rgb(40, 40, 48);
+    color: #fff;
+    padding: 5px;
 }
 .error{
     color:red;

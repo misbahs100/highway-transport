@@ -10,6 +10,8 @@ import Home from './components/Home/Home';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import { createContext, useState } from 'react';
+import DestinationAddress from './components/DestinationAddress/DestinationAddress';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -30,6 +32,9 @@ function App() {
         <Route path="/login">
           <Login></Login>
         </Route>
+        <PrivateRoute path="/transport/:vehicle">
+          <DestinationAddress></DestinationAddress>
+        </PrivateRoute>
       </Switch>
     </Router>
     </UserContext.Provider>

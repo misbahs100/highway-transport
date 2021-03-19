@@ -6,6 +6,8 @@ import {UserContext} from '../../App'
 import Header from '../Header/Header';
 import Map from '../Map/Map';
 import transportsData from '../../transportsData/transportsData.json';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faUser, faUserFriends } from '@fortawesome/free-solid-svg-icons'
 
 const DestinationAddress = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -31,21 +33,21 @@ const DestinationAddress = () => {
                   <div className="timeline"></div>
                   <div className="d-flex detail">
                       <div className="img-address"><img src={result.imageUrl} alt=""/></div>
-                      <div><p>{result.title} {result.capacity}</p></div>
+                      <div><p>{result.title} <FontAwesomeIcon icon={faUserFriends} /> {result.capacity}</p></div>
                       <div><p>{result.price}</p></div>
                   </div>
                   <div className="d-flex detail">
                       <div className="img-address"><img src={result.imageUrl} alt=""/></div>
-                      <div><p>{result.title} {result.capacity}</p></div>
+                      <div><p>{result.title} <FontAwesomeIcon icon={faUserFriends} /> {result.capacity}</p></div>
                       <div><p>{result.price}</p></div>
                   </div>
                   <div className="d-flex detail">
                       <div className="img-address"><img src={result.imageUrl} alt=""/></div>
-                      <div><p>{result.title} {result.capacity}</p></div>
+                      <div><p>{result.title} <FontAwesomeIcon icon={faUserFriends} /> {result.capacity}</p></div>
                       <div><p>{result.price}</p></div>
                   </div>
               </div>)
-                : ( <div className="col-md-4 addressbox">
+                : ( <div className="col-md-4 container addressbox">
                 <h1>Address</h1>
                 <form className="address-form" onSubmit={handleSubmit(onSubmit)}>
                     <input name="name" defaultValue={loggedInUser.displayName} ref={register({ required: true })} placeholder="Your name"/>

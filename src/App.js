@@ -12,6 +12,7 @@ import Login from './components/Login/Login';
 import { createContext, useState } from 'react';
 import DestinationAddress from './components/DestinationAddress/DestinationAddress';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import NothingFound from './components/NothingFound/NothingFound';
 
 export const UserContext = createContext();
 
@@ -34,6 +35,9 @@ function App() {
         <PrivateRoute path="/transport/:vehicle">
           <DestinationAddress></DestinationAddress>
         </PrivateRoute>
+        <Route path="*">
+          <NothingFound></NothingFound>
+        </Route>
       </Switch>
     </Router>
     </UserContext.Provider>

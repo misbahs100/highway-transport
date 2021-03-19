@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import './Home.css';
-import bus from '../../images/bus-1.png';
-import bike from '../../images/bike-1.jpg';
-import train from '../../images/train-2.jpg';
-import car from '../../images/car-3.jpg';
 import Header from '../Header/Header';
 import transportsData from '../../transportsData/transportsData.json';
 import Transport from '../Transport/Transport';

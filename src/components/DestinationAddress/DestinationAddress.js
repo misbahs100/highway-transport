@@ -69,7 +69,7 @@ const DestinationAddress = () => {
                   </div>
               </div>)
                 : ( <div className="col-md-4 container addressbox">
-                <h3 className="text-center">Giv.....</h3>
+                {/* <h3 className="text-center">Provide your address</h3> */}
                 
                 <form className="address-form" onSubmit={handleSubmit(onSubmit)}>
                     

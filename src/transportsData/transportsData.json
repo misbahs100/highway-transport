@@ -4,26 +4,30 @@
     "description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
     "imageUrl": "https://www.uttaramotorsltd.com/wp-content/uploads/2015/12/LT-Bus.png",
     "price": "$124.18",
-    "title": "Bus"
+    "title": "Bus",
+    "capacity": "10"
   }, {
     "id": 2,
     "roadType": "Thebault",
     "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
     "imageUrl": "https://media.zigcdn.com/media/model/2020/Jun/bajaj-pulsar-150_360x240.jpg",
     "price": "$172.64",
-    "title": "Bike"
+    "title": "Bike",
+    "capacity": "2"
   }, {
     "id": 3,
     "roadType": "Almire",
     "description": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.\n\nCurabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
     "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSprgUvpjRy_QG-vIyu0HSwJJ_B_TmB4FzejA&usqp=CAU",
     "price": "$144.32",
-    "title": "Train"
+    "title": "Train",
+    "capacity": "20"
   }, {
     "id": 4,
     "roadType": "Eveleen",
     "description": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
     "imageUrl": "https://images.ctfassets.net/ro7z507xvlp4/6VE6CpObJe6qyHHYEzb81X/a6c2752bc9cede65b958ddbe8521af2c/mb_gla_1x.png?q=80&fm=png",
     "price": "$174.74",
-    "title": "Car"
+    "title": "Car",
+    "capacity": "4"
   }]

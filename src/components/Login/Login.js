@@ -3,6 +3,8 @@ import { createUserWithEmailAndPassword, handleSignInWithGithub, handleSignInWit
 import { useHistory, useLocation } from 'react-router';
 import './Login.css';
 import {UserContext} from '../../App';
+import googlePic from '../../images/google-2.png';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 const Login = () => {
     const [newUser, setNewUser] = useState(false)
@@ -98,8 +100,9 @@ const Login = () => {
                 </form>
                 <div>
                     {/* <FacebookIcon titleAccess="Sign in with Facebook" onClick='' className="signin-btn"></FacebookIcon> */}
-                    <button title="Sign in with Google" onClick={googleSignIn} className="signin-btn">G</button>
+                    <button title="Sign in with Google" onClick={googleSignIn} className="signin-btn"><img src={googlePic} alt=""/></button>
                     {/* <TwitterIcon titleAccess="Sign in with Twitter" className="signin-btn"></TwitterIcon> */}
+                    <GitHubIcon titleAccess="Sign in with Github" onClick={ghSignIn} className="signin-btn"></GitHubIcon>
                 </div>
             </div>
         </div>

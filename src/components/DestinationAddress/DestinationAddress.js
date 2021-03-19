@@ -7,7 +7,7 @@ import Header from '../Header/Header';
 import Map from '../Map/Map';
 import transportsData from '../../transportsData/transportsData.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faUser, faUserFriends } from '@fortawesome/free-solid-svg-icons'
+import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
 
 const DestinationAddress = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);

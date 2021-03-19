@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 const Header = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     return (
         <div>
             
@@ -25,7 +27,7 @@ const Header = () => {
                             <Link to="/contact"  className="nav-link">Contact</Link>
                             </li>
                             <li class="nav-item">
-                            <Link to="/login"  className="nav-link">Login</Link>
+                            <Link to="/login"  className="nav-link">{loggedInUser.displayName ? loggedInUser.displayName : "Login"}</Link>
                             </li>
                         </ul>
                     </div>

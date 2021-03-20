@@ -1,10 +1,10 @@
 /* styles for login form */
 .loginbox{
-    width: 320px;
-    height: 510px;
+    width: 340px;
+    height: 610px;
     background: rgb(40, 40, 48);
     color: #fff;
-    margin-top: 15%;
+    margin-top: 10%;
     margin-left: 37%;
     /* position: absolute; */
     /* transform: translate(-50%,-50%); */
@@ -104,6 +104,6 @@
     margin-top: 10%;
   }
   .loginbox-container{
-    height: 900px;
+    height: 1000px;
   }
 }

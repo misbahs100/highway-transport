@@ -110,4 +110,11 @@
         margin: auto 18% ;
         height: 600px;
     }
+    .mapbox{
+        margin-top: 10px;
+        margin-left: 3%;
+    }
+    .result-container{
+        margin-left: 3%;
+    }
 }

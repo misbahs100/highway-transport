@@ -13,6 +13,7 @@ import { createContext, useState } from 'react';
 import DestinationAddress from './components/DestinationAddress/DestinationAddress';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NothingFound from './components/NothingFound/NothingFound';
+import Blog from './components/Blog/Blog';
 
 export const UserContext = createContext();
 
@@ -34,6 +35,9 @@ function App() {
         </Route>
         <PrivateRoute path="/transport/:vehicle">
           <DestinationAddress></DestinationAddress>
+        </PrivateRoute>
+        <PrivateRoute path="/blog">
+          <Blog></Blog>
         </PrivateRoute>
         <Route path="*">
           <NothingFound></NothingFound>

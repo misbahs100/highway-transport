@@ -40,7 +40,7 @@
   }
 .addressbox{
     width: 320px;
-    height: 510px;
+    height: 550px;
     background: rgb(40, 40, 48);
     color: #fff;
     padding: 5px;
@@ -48,9 +48,10 @@
 }
 .error{
     color:red;
+    margin-left: 30px;
 }
 .address-form{
-    border: 1px solid green;
+    /* border: 1px solid green; */
     
 }
 .img-address img{
@@ -86,9 +87,27 @@
     /* font-weight: bold; */
 
 }
+.result-container{
+    border: 1px solid black;
+    padding: 15px;
+    background-color: rgb(40, 40, 48);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+.mapbox{
+    /* style={{border: '1px solid red', height: '500px', width: '100px', backgroundColor: 'white'}} */
+    border: 1px solid gray;
+}
 @media only screen and (max-width: 600px){
     .date-p{
         margin-left: 10px;
         margin-top: 5px;
+    }
+    .error{
+        color:red;
+        margin-left: 10px;
+    }
+    .addressbox{
+        margin: auto 18% ;
+        height: 600px;
     }
 }

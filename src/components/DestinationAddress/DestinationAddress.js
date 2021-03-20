@@ -4,7 +4,6 @@ import { useParams } from 'react-router';
 import './DestinationAddress.css';
 import {UserContext} from '../../App'
 import Header from '../Header/Header'; 
-import Map from '../Map/Map';
 import transportsData from '../../transportsData/transportsData.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +11,7 @@ import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css";
 import moment from 'moment';
 import 'moment/locale/fr';
+import MapContainer from '../MapContainer/MapContainer';
 
 const DestinationAddress = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -47,7 +47,7 @@ const DestinationAddress = () => {
             <Header></Header>
             <div className="row container mt-5">
                 {isSearched
-                  ?  ( <div className="col-md-4 container" style={{border:'1px solid black', padding:'15px', backgroundColor: 'rgb(40, 40, 48)'}}>
+                  ?  ( <div className="col-md-4 container result-container">
                   <div className="timeline">
                       <div className="timeline-text">Source: {address.source}</div>
                       <div className="timeline-text">Destination: {address.destination}</div>
@@ -69,7 +69,7 @@ const DestinationAddress = () => {
                   </div>
               </div>)
                 : ( <div className="col-md-4 container addressbox">
-                {/* <h3 className="text-center">Provide your address</h3> */}
+                <h3 className="text-center mt-3">Provide your address here</h3>
                 
                 <form className="address-form" onSubmit={handleSubmit(onSubmit)}>
                     
@@ -95,9 +95,9 @@ const DestinationAddress = () => {
 
 
                
-                <div className="col-md-6" style={{border: '1px solid red'}}>
-                    <Map></Map>
-                    
+                <div className="col-md-6 mapbox">
+                    <MapContainer></MapContainer>
+                    {/* <h1 className="text-center">This container is for showing Map.</h1> */}
                 </div>
             </div>
 

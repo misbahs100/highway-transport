@@ -25,11 +25,9 @@ const Login = () => {
         handleSignInWithGoogle()
             .then(res => {
                 handleResponse(res);
-                console.log(res)
             })
             .catch(error => {
-                console.log(error);
-
+                console.log(error); 
             })
     }
 
@@ -62,7 +60,6 @@ const Login = () => {
             newUserInfo[e.target.name] = e.target.value;
             newUserInfo.error = "";
             setUser(newUserInfo);
-            console.log(isFieldValid)
         }
         else {
             const newUserInfo = { ...user };
@@ -85,17 +82,9 @@ const Login = () => {
         if (!newUser && user.email && user.password) {
             signInWithEmailAndPassword(user.email, user.password)
                 .then(res => {
-                    console.log("jsiodf", res);
                     handleResponse(res);
                 })
-                .catch(error => {
-                    console.log("ooo: ",error);
-                })
         }
-        
-
-
-
         e.preventDefault();
     }
 
@@ -104,8 +93,6 @@ const Login = () => {
         setLoggedInUser(res);
         history.replace(from);
     }
-
-console.log("sdfjsk", user.error, user.success)
 
     return (
         <div className="loginbox-container">

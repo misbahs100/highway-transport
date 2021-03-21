@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 
-//note: code formatted for ES6 here
 export class MapContainer extends Component {
     state = {
       showingInfoWindow: false,
@@ -31,8 +30,6 @@ export class MapContainer extends Component {
             onClick={this.onMapClicked}>
           <Marker onClick={this.onMarkerClick}
                   name={'Current location'} />
-   
-          
         </Map>
       )
     }

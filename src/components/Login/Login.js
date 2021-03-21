@@ -14,8 +14,7 @@ const Login = () => {
         email: '',
         password: '',
         error: '',
-        photo: '',
-        success: true
+        photo: ''
     });
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
@@ -85,11 +84,11 @@ const Login = () => {
         if (!newUser && user.email && user.password) {
             signInWithEmailAndPassword(user.email, user.password)
                 .then(res => {
-                    console.log("jsiodf", res.error);
+                    console.log("jsiodf", res);
                     handleResponse(res);
                 })
                 .catch(error => {
-                    console.log(error);
+                    console.log("ooo: ",error);
                 })
         }
         e.preventDefault();
@@ -99,6 +98,9 @@ const Login = () => {
         setUser(res);
         setLoggedInUser(res);
         history.replace(from);
+        // if(user.success){
+        //     history.replace(from);
+        // }
     }
 
 console.log("sdfjsk", user.error, user.success)
@@ -121,7 +123,7 @@ console.log("sdfjsk", user.error, user.success)
                     <input type="password" name="password" onBlur={handleOnBlur} placeholder="Your password" />
                     <br />
                     {/* {user.error === "something not valid" && <small style={{color: 'red'}}>Password should minimum 6 digits long and contain 1 number</small>} */}
-                    {user.success ? <p>{user.error}</p> : <p>{user.error}</p>}
+                    {!user.success && <p>{user.error}</p>}
                     <input type="password" name="confirmPassword" onBlur={handleOnBlur} placeholder="Confirm your password" />
                     <br />
                     <input type="submit" value={newUser ? "Sign up" : "Sign in"} />

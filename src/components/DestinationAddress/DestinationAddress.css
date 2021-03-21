@@ -1,4 +1,5 @@
-.address-form input[name="email"], input[name="name"], input[name="source"], input[name="destination"]{
+.address-form input[name="email"], input[name="name"], input[name="source"], input[name="destination"]
+{
     display: block;
     margin-top: 30px;
     padding: 5px;
@@ -17,7 +18,7 @@
 }
 
 .address-form input[type="submit"]
-  {
+{
     border: none;
     outline: none;
     height: 40px;
@@ -31,13 +32,12 @@
     margin-right: auto;
     display: block;
     margin-top: 30px;
-  }
-.address-form input[type="submit"]:hover
-  {
+}
+.address-form input[type="submit"]:hover{
     cursor: pointer;
     background: #ffc107;
     color: #000;
-  }
+}
 .addressbox{
     width: 320px;
     height: 550px;
@@ -52,7 +52,6 @@
 }
 .address-form{
     /* border: 1px solid green; */
-    
 }
 .img-address img{
     width: 50px;
@@ -85,7 +84,6 @@
     margin-left: 20%;
     margin-top: 15px;
     /* font-weight: bold; */
-
 }
 .result-container{
     border: 1px solid black;
@@ -94,9 +92,7 @@
     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 .mapbox{
-    /* style={{border: '1px solid red', height: '500px', width: '100px', backgroundColor: 'white'}} */
     /* border: 1px solid gray; */
-    
 }
 @media only screen and (max-width: 600px){
     .date-p{

@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import './DestinationAddress.css';
-import {UserContext} from '../../App'
-import Header from '../Header/Header'; 
+import { UserContext } from '../../App'
+import Header from '../Header/Header';
 import transportsData from '../../transportsData/transportsData.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
@@ -14,10 +14,9 @@ import 'moment/locale/fr';
 import MapContainer from '../MapContainer/MapContainer';
 
 const DestinationAddress = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);   // context 
     console.log("context: ", loggedInUser);
-    const [transports, setTransports] = useState(transportsData);
-    console.log("keu: ",transports);
+    const [transports, setTransports] = useState(transportsData);    // fake data
     const { vehicle } = useParams();
     const { register, handleSubmit, watch, errors } = useForm();
     const [isSearched, setIsSearched] = useState(false);
@@ -26,82 +25,79 @@ const DestinationAddress = () => {
         destination: ''
     })
     const handleOnBlur = (e) => {
-       
-    //    if(e.target.name === 'source'){
-           const newAddress = {...address};
-           newAddress[e.target.name] = e.target.value;
-           console.log(e.target.value);
-           setAddress(newAddress);
-           console.log("bilai",address)
-    //    }
+        const newAddress = { ...address };
+        newAddress[e.target.name] = e.target.value;
+        console.log(e.target.value);
+        setAddress(newAddress);
     }
     const onSubmit = data => {
-        console.log(data);
         setIsSearched(true);
     };
-   const result = transports.find(({title}) => title === vehicle);
-   console.log(result);
+
+    const result = transports.find(({ title }) => title === vehicle);
 
     return (
         <div className="loginbox-container">
             <Header></Header>
             <div className="row container mt-5">
                 {isSearched
-                  ?  ( <div className="col-md-4 container result-container">
-                  <div className="timeline">
-                      <div className="timeline-text">Source: {address.source}</div>
-                      <div className="timeline-text">Destination: {address.destination}</div>
-                  </div>
-                  <div className="d-flex detail bg-white">
-                      <div className="img-address"><img src={result.imageUrl} alt=""/></div>
-                      <div><p>{result.title} <FontAwesomeIcon icon={faUserFriends} /> {result.capacity}</p></div>
-                      <div><p>{result.price}</p></div>
-                  </div>
-                  <div className="d-flex detail bg-white">
-                      <div className="img-address"><img src={result.imageUrl} alt=""/></div>
-                      <div><p>{result.title} <FontAwesomeIcon icon={faUserFriends} /> {result.capacity}</p></div>
-                      <div><p>{result.price}</p></div>
-                  </div>
-                  <div className="d-flex detail bg-white">
-                      <div className="img-address"><img src={result.imageUrl} alt=""/></div>
-                      <div><p>{result.title} <FontAwesomeIcon icon={faUserFriends} /> {result.capacity}</p></div>
-                      <div><p>{result.price}</p></div>
-                  </div>
-              </div>)
-                : ( <div className="col-md-4 container addressbox">
-                <h3 className="text-center mt-3">Provide your address here</h3>
-                
-                <form className="address-form" onSubmit={handleSubmit(onSubmit)}>
-                    
-                    <input name="name" defaultValue={loggedInUser.displayName} ref={register({ required: true })} placeholder="Your name"/>
-                    {errors.name && <span className="error">Name is required</span>}
+                    ?
+                    (<div className="col-md-4 container result-container">
+                        <div className="timeline">
+                            <div className="timeline-text">Source: {address.source}</div>
+                            <div className="timeline-text">Destination: {address.destination}</div>
+                        </div>
+                        <div className="d-flex detail bg-white">
+                            <div className="img-address"><img src={result.imageUrl} alt="" /></div>
+                            <div><p>{result.title} <FontAwesomeIcon icon={faUserFriends} /> {result.capacity}</p></div>
+                            <div><p>{result.price}</p></div>
+                        </div>
+                        <div className="d-flex detail bg-white">
+                            <div className="img-address"><img src={result.imageUrl} alt="" /></div>
+                            <div><p>{result.title} <FontAwesomeIcon icon={faUserFriends} /> {result.capacity}</p></div>
+                            <div><p>{result.price}</p></div>
+                        </div>
+                        <div className="d-flex detail bg-white">
+                            <div className="img-address"><img src={result.imageUrl} alt="" /></div>
+                            <div><p>{result.title} <FontAwesomeIcon icon={faUserFriends} /> {result.capacity}</p></div>
+                            <div><p>{result.price}</p></div>
+                        </div>
+                    </div>)
+                    :
+                    (<div className="col-md-4 container addressbox">
+                        <h3 className="text-center mt-3">Provide your address here</h3>
 
-                    <input name="email" defaultValue={loggedInUser.email} ref={register({ required: true })} placeholder="Your email" />
-                    {errors.email && <span className="error">Email is required</span>}
+                        <form className="address-form" onSubmit={handleSubmit(onSubmit)}>
 
-                    <input name="source" onBlur={handleOnBlur} ref={register({ required: true })} placeholder="Pick from" />
-                    {errors.source && <span className="error">Source is required</span>}
+                            <input name="name" defaultValue={loggedInUser.displayName} ref={register({ required: true })} placeholder="Your name" />
+                            {errors.name && <span className="error">Name is required</span>}
 
-                    <input name="destination" onBlur={handleOnBlur} ref={register({ required: true })} placeholder="Destination" />
-                    {errors.destination && <span className="error">Destination is required</span>}
+                            <input name="email" defaultValue={loggedInUser.email} ref={register({ required: true })} placeholder="Your email" />
+                            {errors.email && <span className="error">Email is required</span>}
 
-                    <p className="date-p">Click below to set date.</p>
-                    <Datetime className="calendar" locale="en-ca"/>
+                            <input name="source" onBlur={handleOnBlur} ref={register({ required: true })} placeholder="Pick from" />
+                            {errors.source && <span className="error">Source is required</span>}
 
-                    <input type="submit" value="Search"/>
-                </form>
-              </div>)
+                            <input name="destination" onBlur={handleOnBlur} ref={register({ required: true })} placeholder="Destination" />
+                            {errors.destination && <span className="error">Destination is required</span>}
+
+                            <p className="date-p">Click below to set date.</p>
+                            <Datetime className="calendar" locale="en-ca" />
+
+                            <input type="submit" value="Search" />
+                        </form>
+                    </div>)
                 }
 
 
-               
+
                 <div className="col-md-6 mapbox">
-                    <MapContainer></MapContainer> 
+                    <MapContainer></MapContainer>
                     {/* <h1 className="text-center">This container is for showing Map.</h1> */}
                 </div>
             </div>
 
-          
+
         </div>
     );
 };

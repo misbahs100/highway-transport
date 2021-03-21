@@ -3,11 +3,9 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Home from './components/Home/Home';
-import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import { createContext, useState } from 'react';
 import DestinationAddress from './components/DestinationAddress/DestinationAddress';

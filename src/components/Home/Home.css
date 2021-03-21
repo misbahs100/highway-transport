@@ -43,3 +43,9 @@
         height: 1100px;
     }
 }
+@media only screen and (max-width: 540px){
+    .card-container{
+        display: block;
+        
+    }
+}

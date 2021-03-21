@@ -14,6 +14,7 @@ import DestinationAddress from './components/DestinationAddress/DestinationAddre
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NothingFound from './components/NothingFound/NothingFound';
 import Blog from './components/Blog/Blog';
+import Contact from './components/Contact/Contact';
 
 export const UserContext = createContext();
 
@@ -38,6 +39,9 @@ function App() {
         </PrivateRoute>
         <PrivateRoute path="/blog">
           <Blog></Blog>
+        </PrivateRoute>
+        <PrivateRoute path="/contact">
+          <Contact></Contact>
         </PrivateRoute>
         <Route path="*">
           <NothingFound></NothingFound>

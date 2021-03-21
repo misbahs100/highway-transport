@@ -142,7 +142,7 @@ console.log("sdfjsk", user.error, user.success)
                     <br />
                 </form>
                     
-                {/* {user.success ? <p>User logged in successfully.</p> : <p>not valid</p>} */}
+                {user.success ? <p>User logged in successfully.</p> : <p>{user.error}</p>}
 
                 <div>
                     <button title="Sign in with Google" onClick={googleSignIn} className="signin-btn"><img src={googlePic} alt="" /></button>

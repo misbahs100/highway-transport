@@ -15,7 +15,7 @@ import MapContainer from '../MapContainer/MapContainer';
 
 const DestinationAddress = () => {
     const [loggedInUser] = useContext(UserContext);   // context 
-    console.log("context: ", loggedInUser);
+    const { displayName, email } = loggedInUser;        // destructuring
     const [transports] = useState(transportsData);    // fake data
     const { vehicle } = useParams();
     const { register, handleSubmit, errors } = useForm();
@@ -34,6 +34,7 @@ const DestinationAddress = () => {
         setIsSearched(true);
     };
 
+    // finding the matched transport object which is selected
     const result = transports.find(({ title }) => title === vehicle);
 
     return (
@@ -69,10 +70,10 @@ const DestinationAddress = () => {
 
                         <form className="address-form" onSubmit={handleSubmit(onSubmit)}>
 
-                            <input name="name" defaultValue={loggedInUser.displayName} ref={register({ required: true })} placeholder="Your name" />
+                            <input name="name" defaultValue={displayName} ref={register({ required: true })} placeholder="Your name" />
                             {errors.name && <span className="error">Name is required</span>}
 
-                            <input name="email" defaultValue={loggedInUser.email} ref={register({ required: true })} placeholder="Your email" />
+                            <input name="email" defaultValue={email} ref={register({ required: true })} placeholder="Your email" />
                             {errors.email && <span className="error">Email is required</span>}
 
                             <input name="source" onBlur={handleOnBlur} ref={register({ required: true })} placeholder="Pick from" />
@@ -84,7 +85,7 @@ const DestinationAddress = () => {
                             <p className="date-p">Click below to set date.</p>
                             <Datetime className="calendar" locale="en-ca" />
 
-                            <input type="submit" value={`Search for nearest ${vehicle}`}  />
+                            <input type="submit" value={`Search for nearest ${vehicle}`} />
                         </form>
                     </div>)
                 }
@@ -93,7 +94,6 @@ const DestinationAddress = () => {
 
                 <div className="col-md-6 mapbox">
                     <MapContainer></MapContainer>
-                    {/* <h1 className="text-center">This container is for showing Map.</h1> */}
                 </div>
             </div>
 

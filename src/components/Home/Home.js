@@ -6,7 +6,6 @@ import Transport from '../Transport/Transport';
 
 const Home = () => {
     const [transports] = useState(transportsData);
-    console.log(transports);
     return (
         <div className="home">
             <Header></Header>

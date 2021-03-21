@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './Transport.css';
 
 const Transport = (props) => {
-    console.log("ppp", props);
     const {imageUrl, title} = props.transport;
     return (
         <div className="col-md-2 vehicle-container">

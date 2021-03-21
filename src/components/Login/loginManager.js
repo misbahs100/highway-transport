@@ -16,15 +16,10 @@ export const handleSignInWithGoogle = () => {
             var user = result.user;
             console.log(user);
             return user;
-            // ...
         }).catch((error) => {
-            // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-            // The email of the user's account used.
-            // The firebase.auth.AuthCredential type that was used.
             console.log(errorCode, errorMessage);
-            // ...
         });
 }
 
@@ -36,13 +31,10 @@ export const handleSignInWithGithub = () => {
         .then((result) => {
             var user = result.user;
             return user;
-            // ...
         }).catch((error) => {
-            // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log(errorCode, errorMessage)
-            // ...
         });
 }
 

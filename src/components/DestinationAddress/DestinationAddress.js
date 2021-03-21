@@ -96,8 +96,8 @@ const DestinationAddress = () => {
 
                
                 <div className="col-md-6 mapbox">
-                    {/* <MapContainer></MapContainer>  */}
-                    <h1 className="text-center">This container is for showing Map.</h1>
+                    <MapContainer></MapContainer> 
+                    {/* <h1 className="text-center">This container is for showing Map.</h1> */}
                 </div>
             </div>
 

@@ -32,7 +32,7 @@
     display: block;
     margin-top: 30px;
   }
-  .address-form input[type="submit"]:hover
+.address-form input[type="submit"]:hover
   {
     cursor: pointer;
     background: #ffc107;
@@ -95,7 +95,8 @@
 }
 .mapbox{
     /* style={{border: '1px solid red', height: '500px', width: '100px', backgroundColor: 'white'}} */
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
+    
 }
 @media only screen and (max-width: 600px){
     .date-p{
@@ -112,9 +113,13 @@
     }
     .mapbox{
         margin-top: 10px;
-        margin-left: 3%;
+        /* margin-left: 3%; */
+        height: 400px;
     }
     .result-container{
         margin-left: 3%;
+    }
+    .loginbox-container{
+        height: 1200px;
     }
 }

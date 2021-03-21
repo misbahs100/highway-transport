@@ -8,14 +8,14 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import Header from '../Header/Header';
 
 const Login = () => {
-    const [newUser, setNewUser] = useState(false)
+    const [newUser, setNewUser] = useState(false);
     const [user, setUser] = useState({
         name: '',
         email: '',
         password: '',
         error: '',
         photo: '',
-        success: ''
+        success: true
     });
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
@@ -30,6 +30,7 @@ const Login = () => {
             })
             .catch(error => {
                 console.log(error);
+
             })
     }
 
@@ -67,10 +68,9 @@ const Login = () => {
         else {
             const newUserInfo = { ...user };
             newUserInfo[e.target.name] = e.target.value;
-            newUserInfo.error = "something not valid";
+            
             setUser(newUserInfo);
         }
-        console.log("trimm: ",user);
         
 
     }
@@ -85,7 +85,11 @@ const Login = () => {
         if (!newUser && user.email && user.password) {
             signInWithEmailAndPassword(user.email, user.password)
                 .then(res => {
+                    console.log("jsiodf", res.error);
                     handleResponse(res);
+                })
+                .catch(error => {
+                    console.log(error);
                 })
         }
         e.preventDefault();
@@ -97,7 +101,7 @@ const Login = () => {
         history.replace(from);
     }
 
-
+console.log("sdfjsk", user.error, user.success)
 
     return (
         <div className="loginbox-container">
@@ -116,7 +120,8 @@ const Login = () => {
                     
                     <input type="password" name="password" onBlur={handleOnBlur} placeholder="Your password" />
                     <br />
-                    {user.error === "something not valid" && <small style={{color: 'red'}}>Password should minimum 6 digits long and contain 1 number</small>}
+                    {/* {user.error === "something not valid" && <small style={{color: 'red'}}>Password should minimum 6 digits long and contain 1 number</small>} */}
+                    {user.success ? <p>{user.error}</p> : <p>{user.error}</p>}
                     <input type="password" name="confirmPassword" onBlur={handleOnBlur} placeholder="Confirm your password" />
                     <br />
                     <input type="submit" value={newUser ? "Sign up" : "Sign in"} />
@@ -130,6 +135,7 @@ const Login = () => {
                     <p>--- or ---</p>
                     <br />
                 </form>
+                    
                 {/* {user.success ? <p>User logged in successfully.</p> : <p>not valid</p>} */}
                 <div>
                     {/* <FacebookIcon titleAccess="Sign in with Facebook" onClick='' className="signin-btn"></FacebookIcon> */}

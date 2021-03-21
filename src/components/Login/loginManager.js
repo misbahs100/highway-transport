@@ -13,12 +13,6 @@ export const handleSignInWithGoogle = () => {
     return firebase.auth()
         .signInWithPopup(googelProvider)
         .then((result) => {
-            /** @type {firebase.auth.OAuthCredential} */
-            var credential = result.credential;
-
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            var token = credential.accessToken;
-            // The signed-in user info.
             var user = result.user;
             console.log(user);
             return user;
@@ -28,9 +22,7 @@ export const handleSignInWithGoogle = () => {
             var errorCode = error.code;
             var errorMessage = error.message;
             // The email of the user's account used.
-            var email = error.email;
             // The firebase.auth.AuthCredential type that was used.
-            var credential = error.credential;
             console.log(errorCode, errorMessage);
             // ...
         });
@@ -42,13 +34,6 @@ export const handleSignInWithGithub = () => {
         .auth()
         .signInWithPopup(ghProvider)
         .then((result) => {
-            /** @type {firebase.auth.OAuthCredential} */
-            var credential = result.credential;
-
-            // This gives you a GitHub Access Token. You can use it to access the GitHub API.
-            var token = credential.accessToken;
-
-            // The signed-in user info.
             var user = result.user;
             return user;
             // ...
@@ -56,10 +41,7 @@ export const handleSignInWithGithub = () => {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-            // The email of the user's account used.
-            var email = error.email;
-            // The firebase.auth.AuthCredential type that was used.
-            var credential = error.credential;
+            console.log(errorCode, errorMessage)
             // ...
         });
 }

@@ -20,7 +20,7 @@ const Login = () => {
     const history = useHistory();
     const location = useLocation();
     let { from } = location.state || { from: { pathname: "/" } };
-
+    console.log(loggedInUser);
     const googleSignIn = () => {
         handleSignInWithGoogle()
             .then(res => {
@@ -44,7 +44,6 @@ const Login = () => {
     }
     const handleOnBlur = (e) => {
         let isFieldValid = true;
-        let pass;
         if (e.target.name === 'email') {
             isFieldValid = /\S+@\S+\.\S+/.test(e.target.value);
         }
@@ -52,7 +51,6 @@ const Login = () => {
             const isPasswordLength = e.target.value.length > 6;
             const isPasswordHasNumber = /\d{1}/.test(e.target.value);
             isFieldValid = isPasswordLength && isPasswordHasNumber;
-            pass = e.target.value;
         }
         if(e.target.name === 'confirmPassword'){
            
@@ -127,11 +125,11 @@ console.log("sdfjsk", user.error, user.success)
                     <input type="password" name="confirmPassword" onBlur={handleOnBlur} placeholder="Confirm your password" />
                     <br />
                     <input type="submit" value={newUser ? "Sign up" : "Sign in"} />
-                    <a href="#">Forgot Password?</a>
+                    <a href="# ">Forgot Password?</a>
                     <br />
                     {newUser
-                        ? <a href="#" onClick={() => setNewUser(!newUser)}>Already have an account? Log in.</a>
-                        : <a href="#" onClick={() => setNewUser(!newUser)}>Don't have an account? Create one.</a>
+                        ? <a href="# " onClick={() => setNewUser(!newUser)}>Already have an account? Log in.</a>
+                        : <a href="# " onClick={() => setNewUser(!newUser)}>Don't have an account? Create one.</a>
                     }
                     <br />
                     <p>--- or ---</p>

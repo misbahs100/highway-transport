@@ -9,16 +9,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css";
-import moment from 'moment';
+// import moment from 'moment';
 import 'moment/locale/fr';
 import MapContainer from '../MapContainer/MapContainer';
 
 const DestinationAddress = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);   // context 
+    const [loggedInUser] = useContext(UserContext);   // context 
     console.log("context: ", loggedInUser);
-    const [transports, setTransports] = useState(transportsData);    // fake data
+    const [transports] = useState(transportsData);    // fake data
     const { vehicle } = useParams();
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm();
     const [isSearched, setIsSearched] = useState(false);
     const [address, setAddress] = useState({
         source: '',

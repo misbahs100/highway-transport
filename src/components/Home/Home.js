@@ -5,7 +5,7 @@ import transportsData from '../../transportsData/transportsData.json';
 import Transport from '../Transport/Transport';
 
 const Home = () => {
-    const [transports, setTransports] = useState(transportsData);
+    const [transports] = useState(transportsData);
     console.log(transports);
     return (
         <div className="home">

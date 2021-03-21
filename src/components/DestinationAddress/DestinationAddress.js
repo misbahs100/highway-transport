@@ -84,7 +84,7 @@ const DestinationAddress = () => {
                             <p className="date-p">Click below to set date.</p>
                             <Datetime className="calendar" locale="en-ca" />
 
-                            <input type="submit" value="Search" />
+                            <input type="submit" value={`Search for nearest ${vehicle}`}  />
                         </form>
                     </div>)
                 }

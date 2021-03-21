@@ -51,8 +51,10 @@ const Login = () => {
             const isPasswordLength = e.target.value.length > 6;
             const isPasswordHasNumber = /\d{1}/.test(e.target.value);
             isFieldValid = isPasswordLength && isPasswordHasNumber;
+           
         }
         if(e.target.name === 'confirmPassword'){
+        
            
         }
         if (isFieldValid) {
@@ -68,6 +70,7 @@ const Login = () => {
             
             setUser(newUserInfo);
         }
+       
         
 
     }
@@ -89,6 +92,10 @@ const Login = () => {
                     console.log("ooo: ",error);
                 })
         }
+        
+
+
+
         e.preventDefault();
     }
 
@@ -96,9 +103,6 @@ const Login = () => {
         setUser(res);
         setLoggedInUser(res);
         history.replace(from);
-        // if(user.success){
-        //     history.replace(from);
-        // }
     }
 
 console.log("sdfjsk", user.error, user.success)
@@ -120,7 +124,6 @@ console.log("sdfjsk", user.error, user.success)
                     
                     <input type="password" name="password" onBlur={handleOnBlur} placeholder="Your password" />
                     <br />
-                    {/* {user.error === "something not valid" && <small style={{color: 'red'}}>Password should minimum 6 digits long and contain 1 number</small>} */}
                     {!user.success && <p>{user.error}</p>}
                     <input type="password" name="confirmPassword" onBlur={handleOnBlur} placeholder="Confirm your password" />
                     <br />
@@ -132,15 +135,17 @@ console.log("sdfjsk", user.error, user.success)
                         : <a href="# " onClick={() => setNewUser(!newUser)}>Don't have an account? Create one.</a>
                     }
                     <br />
-                    <p>--- or ---</p>
+                    {newUser
+                        ? <p>--- or sign up with ---</p>
+                        : <p>--- or sign in with ---</p>
+                    }
                     <br />
                 </form>
                     
                 {/* {user.success ? <p>User logged in successfully.</p> : <p>not valid</p>} */}
+
                 <div>
-                    {/* <FacebookIcon titleAccess="Sign in with Facebook" onClick='' className="signin-btn"></FacebookIcon> */}
                     <button title="Sign in with Google" onClick={googleSignIn} className="signin-btn"><img src={googlePic} alt="" /></button>
-                    {/* <TwitterIcon titleAccess="Sign in with Twitter" className="signin-btn"></TwitterIcon> */}
                     <GitHubIcon titleAccess="Sign in with Github" onClick={ghSignIn} className="signin-btn"></GitHubIcon>
                 </div>
             </div>

@@ -14,7 +14,7 @@ import NothingFound from './components/NothingFound/NothingFound';
 import Blog from './components/Blog/Blog';
 import Contact from './components/Contact/Contact';
 
-export const UserContext = createContext();
+export const UserContext = createContext(); 
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
